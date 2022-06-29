@@ -170,7 +170,7 @@ class DLCGenerator(object):
 
     def get_current(self, options):
         if len(options['current']) > 0:
-            current = np.array( [float(m) for m in options['wave_period']] )
+            current = np.array( [float(m) for m in options['current']] )
         else:
             current = np.array([])
         return current
@@ -190,7 +190,7 @@ class DLCGenerator(object):
         return wave_heading
 
     def get_sea_level_offset(self, options):
-        if len(options['wave_heading']) > 0:
+        if len(options['sea_level_offset']) > 0:
             sea_level_offset = np.array( [float(m) for m in options['sea_level_offset']] )
         else:
             sea_level_offset = np.array([])
