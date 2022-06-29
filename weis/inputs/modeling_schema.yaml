@@ -1175,7 +1175,7 @@ properties:
                         description: Initial or fixed nacelle-yaw angle (radians)
                     TTDspFA:
                         type: number
-                        minimum: 0.0
+                        minimum: -50.0
                         maximum: 50.0
                         default: 0.0
                         unit: m

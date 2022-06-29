@@ -896,7 +896,7 @@ class DLCGenerator(object):
     def generate_6p5(self, options):
         # Parked (standing still or idling) - extreme wind model 500-year return period - ultimate loads
         options['wind_speed'] = [50,50]  # set dummy, so wind seeds are correct
-        _, wind_seeds, wave_seeds, wind_heading, wave_Hs, wave_Tp, wave_gamma, wave_heading, sea_level_offset, _ = self.get_metocean(options)
+        _, wind_seeds, wave_seeds, wind_heading, wave_Hs, wave_Tp, current, wave_gamma, wave_heading, sea_level_offset, _ = self.get_metocean(options)
         # Set yaw_misalign, else default
         if 'yaw_misalign' in options:
             yaw_misalign = options['yaw_misalign']
@@ -931,7 +931,7 @@ class DLCGenerator(object):
             idlc.current = current[i_Cu]
             idlc.wave_gamma = wave_gamma[i_WG]
             idlc.wave_heading = wave_heading[i_WaH]
-            idlc.sea_level_offset = sea_level_offset[i_WiSe]
+            idlc.sea_level_offset = sea_level_offset[i_SL]
             idlc.constrained_wave = True
             idlc.IEC_WindType = self.wind_speed_class_num + 'EWM1'
             idlc.turbulent_wind = True
