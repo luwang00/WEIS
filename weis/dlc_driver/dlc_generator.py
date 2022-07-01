@@ -484,6 +484,7 @@ class DLCGenerator(object):
                 idlc.wave_heading = wave_heading[i_WaH]
                 idlc.IEC_WindType = 'ECD'
                 idlc.turbulent_wind = False
+                idlc.azimuth_init = azimuth_inits[i_WaSe]
                 idlc.label = '1.4'
                 if options['analysis_time'] > 0:
                     idlc.analysis_time = options['analysis_time']

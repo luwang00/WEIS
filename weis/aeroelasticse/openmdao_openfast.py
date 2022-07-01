@@ -1793,7 +1793,6 @@ class FASTLoadCases(ExplicitComponent):
 
                 if dlc_generator.cases[i_case].turbine_status == 'operating-shutdown':
                     shutdown_time[i_case] = dlc_generator.cases[i_case].shutdown_time
-                    azimuth_init[i_case] = dlc_generator.cases[i_case].azimuth_init
             else:
                 rot_speed_initial[i_case]   = 0.
                 pitch_initial[i_case]       = 90.
@@ -1814,6 +1813,7 @@ class FASTLoadCases(ExplicitComponent):
             wind_seed[i_case] = dlc_generator.cases[i_case].RandSeed1
             mean_wind_speed[i_case] = dlc_generator.cases[i_case].URef
             yaw_misalignment[i_case] = dlc_generator.cases[i_case].yaw_misalign
+            azimuth_init[i_case] = dlc_generator.cases[i_case].azimuth_init
 
         # Set other OpenFAST inputs that don't need complicated logic
         sea_level_offset = np.array([c.sea_level_offset for c in dlc_generator.cases])
